@@ -16,9 +16,9 @@ var AppView = Backbone.View.extend({
       console.log("now");
     });
 
-    this.playerView.on('moveOn', function(model) {
-      this.playerView.setSong()
-    });
+    // this.queueView.collection.on('remove', function() {
+    //   this.playerView.setSong()
+    // });
   },
 
   render: function() {
