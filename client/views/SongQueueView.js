@@ -2,6 +2,7 @@
 var SongQueueView = Backbone.View.extend({
 
   tagName: "table",
+  className: ".table-striped",
 
   initialize: function() {
     this.collection.on('add', this.render, this);
