@@ -2,6 +2,12 @@ var PlaylistView = Backbone.View.extend({
 
   tagName: "table",
 
+  events: {
+    'click .queuePlaylist': function() {
+      this.collection.sendToQueue();
+    }
+  },
+
   initialize: function() {
     this.render();
     this.collection.on('add', this.render, this);
@@ -13,7 +19,7 @@ var PlaylistView = Backbone.View.extend({
     // see http://api.jquery.com/detach/
     this.$el.children().detach();
 
-    this.$el.html('<th>Playlist</th>').append(
+    this.$el.html('<th>Playlist <button class="queuePlaylist">Put me in coach!</button></th>').append(
       this.collection.map(function(song) {
         return new PlaylistEntryView({model: song}).render();
       })
