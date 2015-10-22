@@ -1,0 +1,5 @@
+
+var Playlist = Songs.extend({
+
+  
+});

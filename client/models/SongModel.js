@@ -24,8 +24,14 @@ var SongModel = Backbone.Model.extend({
     var count = this.get('count')+1;
     this.set('count', count);
     this.trigger('increment', this);
+  },
+
+  addToPlaylist: function(){
+    this.trigger('addToPlaylist', this);
+  },
+
+  removeFromPlaylist: function(){
+    this.trigger('removeFromPlaylist', this);
   }
-  // removeFromList: function() {
-  //   this.trigger('removeFromList', this);
-  // }
+
 });
